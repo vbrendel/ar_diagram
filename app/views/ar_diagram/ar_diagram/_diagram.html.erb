@@ -1,0 +1,7 @@
+<div id="ar_diagram" data-target="<%= request.path %>" data-selected-view="<%= @view.id %>">
+  <div id="content">
+    <% @view.visible_tables.each do |table| %>
+        <%= render :partial => "table", :locals => {:table => table}, :formats => [:html] %>
+    <% end %>
+  </div>
+</div>

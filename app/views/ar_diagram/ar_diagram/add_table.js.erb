@@ -1,0 +1,4 @@
+$('#content').append("<%= escape_javascript render :partial => "table", :locals => {:table => @table} %>");
+makeDraggable($('#<%= css_id @table.name %>'));
+viewUnsaved(true)
+updateView();

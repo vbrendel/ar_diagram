@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ArDiagram</title>
+  <%= stylesheet_link_tag "ar_diagram/application", :media => "all" %>
+  <%= javascript_include_tag "ar_diagram/application" %>
+  <%= yield :application_head %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= content_for?(:application_content) ? yield(:application_content) : yield %>
+</body>
+</html>

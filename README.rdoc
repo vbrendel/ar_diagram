@@ -1,0 +1,47 @@
+= ArDiagram
+
+== Heads Up
+
+This is pretty much an alpha release. Although I have been using this code for quite a while now on many projects, it hasn't been tested on a wide range of environment.
+
+I know the line drawing isn't as nice as it could be, it would be nice to have lines that turned corners and were more beautiful, but it's still useful the way it is.
+
+Also it doesn't detect polymorphic associations either, something I'd like to add in at some point.
+
+== Description
+
+ArDiagram was created as I like to be able to see visualisations of my database. This project allows you to create live database diagrams, kind of like Visio.
+
+Traditionally diagrams are difficult to keep up to date, because changes are invariably made to the database. ArDiagram is a mountable engine that will always have a live view of your ActiveRecord structure.
+
+Because some databases are rather big, ArDiagram allows you to manage multiple views and place tables on those views. Relationships are automatically detected and relationship lines are drawn between the key fields.
+
+The gem should only be used in development mode so that people can't hit up your production server for a nice diagram of your data.
+
+This gem stores all of it's data in an sqlite databse, separate from your main app.
+
+== Installation
+
+It's a gem. Add the following to your Gemfile.
+
+    gem 'ar_record', :group => :development
+
+Don't forget to run bundle afterwards.
+
+Add the following to your routes. Notice this has no effect if the engine is not defined (which it won't be if you aren't running in the development environment)
+
+    mount ArDiagram::Engine => "/ar_diagram" if defined?(ArDiagram::Engine)
+
+Run the migration to create the db/ar_diagram.sqlite3 database
+
+    rake ar_diagram:migrate
+
+You should be ready to go at this point, navigate to where you have your server running eg:
+
+    http://localhost:3000/ar_diagram
+
+and you should be ready to go...
+
+== License
+
+This project rocks and uses MIT-LICENSE.

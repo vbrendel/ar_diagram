@@ -1,0 +1,14 @@
+<% unless table.model.nil? %>
+    <table id="<%= css_id table.name %>" class="diagram_table" data-x="<%= table.position_x %>" data-y="<%= table.position_y %>">
+      <tr>
+        <th colspan=2><%= table.name.camelize %></th>
+      </tr>
+      <%# table.model.attribute_names.each do |field| %>
+      <% table.model.columns_hash.each do |name, attributes| %>
+          <tr id="<%= css_id table.name.pluralize %>__<%= name %>" <%= field_relationships(table, name) %>>
+            <td><%= name %></td>
+            <td class="type"><%=  attributes.type %></td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>

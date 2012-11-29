@@ -1,0 +1,5 @@
+<% @views.each do |view| %>
+    <%= tb_nav_item tb_link(view.name, show_view_path(view), :remote => true) %>
+    <div class="view_select"><%= link_to view.name, show_view_path(view), :class => "select", :remote => true %></div>
+<% end %>
+

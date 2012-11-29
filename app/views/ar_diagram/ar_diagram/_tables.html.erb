@@ -1,0 +1,4 @@
+<% @tables.each do |table| %>
+    <div class="table_select"><%= link_to table, add_table_path(table), :class => "select", :remote => true %></div>
+<% end %>
+

@@ -1,0 +1,81 @@
+// Place all the styles related to the ar_diagram controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "twitter/bootstrap-no-sprites";
+@import 'font-awesome';
+
+body {
+  padding-top: 50px;
+  font-family: Verdana;
+}
+
+@import "compass";
+
+#tables-dropdown {
+  height: 400px;
+  overflow: scroll;
+}
+
+#content {
+  position: absolute;
+
+  font-family: "Verdana";
+  font-size: 12px;
+
+  #canvas {
+    position: absolute;
+  }
+  table.diagram_table {
+    background: white;
+    position: absolute;
+    border: 1px solid #DDD;
+    -moz-box-shadow: 5px 5px 15px #555555;
+    -webkit-box-shadow: 5px 5px 15px #555555;
+    box-shadow: 5px 5px 15px #555555;
+
+    th {
+      font-size: 110%;
+      color: white;
+      padding: 2px 12px;
+
+      background: #07d;
+      background: -webkit-gradient(linear, left top, left bottom, from(#028), to(#07d));
+      background: -webkit-linear-gradient(top, #028, #07d);
+      background: -moz-linear-gradient(top, #028, #07d);
+      background: -ms-linear-gradient(top, #028, #07d);
+      background: -o-linear-gradient(top, #028, #07d);
+    }
+    tr:nth-child(odd) {
+      background-color: #eee;
+    }
+    tr:nth-child(even) {
+      background-color: #fff;
+    }
+
+    td {
+      font-size: 100%;
+    }
+
+    tr.join {
+      td {
+        color: blue;
+      }
+    }
+
+    tr {
+      td.type {
+        color: #999;
+        text-align: right;
+      }
+    }
+  }
+
+  table.selected {
+    border: 2px solid #7cfc00;
+  }
+
+  table.drag {
+    opacity: 0.5;
+  }
+}
