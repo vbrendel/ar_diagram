@@ -24,7 +24,7 @@ This gem stores all of it's data in an sqlite databse, separate from your main a
 
 It's a gem. Add the following to your Gemfile.
 
-    gem 'ar_record', :group => :development
+    gem 'ar_diagram', :group => :development
 
 Don't forget to run bundle afterwards.
 
